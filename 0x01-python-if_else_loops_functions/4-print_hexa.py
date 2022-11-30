@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-# 4-print_hexa.py
-for number in range(0, 99):
-   print("%i = 0x%x" %(number, number))
+for i in range(0, 99):
+    print("{:d} = 0x{:x}".format(i, i))
