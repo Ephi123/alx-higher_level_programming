@@ -1,72 +1,54 @@
 #include "lists.h"
 
 /**
- * reverse_listint - reverses a linked list
- * @head: pointer to the first node in the list
- *
- * Return: pointer to the first node in the new list
- */
-void reverse_listint(listint_t **head)
+* list_len - finds no. of elements ina linked list.
+* @h: pointer to linked list.
+*
+* Return: number of elements in linked list.
+*/
+size_t list_len(listint_t *h)
 {
-	listint_t *prev = NULL;
-	listint_t *current = *head;
-	listint_t *next = NULL;
+	size_t  nodes = 0;
 
-	while (current)
+	if (h == NULL)
+		return (0);
+	while (h != NULL)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		nodes++;
+		h = h->next;
 	}
-
-	*head = prev;
+	return (nodes);
 }
 
 /**
- * is_palindrome - checks if a linked list is a palindrome
- * @head: double pointer to the linked list
- *
- * Return: 1 if it is, 0 if not
- */
+* is_palindrome - checks if a singly linked list is a palindrome.
+* @head: double pointert to head of d-list.
+*
+* Return: 1 if palindrome, 0 otherwise.
+*/
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
+	int *nArr, i = 0, j = 0, len = 0;
+	listint_t *temp;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*head == NULL)
 		return (1);
-
-	while (1)
+	temp = *head;
+	len = list_len(temp);
+	nArr = (int *)malloc(sizeof(int) * len);
+	if (nArr == NULL)
+		return (2);
+	temp = *head;
+	while (temp != NULL)
 	{
-		fast = fast->next->next;
-		if (!fast)
-		{
-			dup = slow->next;
-			break;
-		}
-		if (!fast->next)
-		{
-			dup = slow->next->next;
-			break;
-		}
-		slow = slow->next;
+		nArr[j] = temp->n;
+		j++;
+		temp = temp->next;
 	}
-
-	reverse_listint(&dup);
-
-	while (dup && temp)
+	for (i = 0, j = len - 1; i < j; i++, j--)
 	{
-		if (temp->n == dup->n)
-		{
-			dup = dup->next;
-			temp = temp->next;
-		}
-		else
+		if (nArr[i] != nArr[j])
 			return (0);
 	}
-
-	if (!dup)
-		return (1);
-
-	return (0);
+	return (1);
 }
