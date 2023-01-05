@@ -68,4 +68,4 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         shape = "Rectangle(" + str(self.__width)
         shape += ", " + str(self.__height) + ")"
-        return (sahpe)
+        return (shape)
