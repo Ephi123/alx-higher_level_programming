@@ -9,6 +9,6 @@ class MyList(list):
 
     def print_sorted(self):
         '''
-        prints the list, but in way sorted
+        prints the list, but in sorted way
         '''
         print(sorted(self))
