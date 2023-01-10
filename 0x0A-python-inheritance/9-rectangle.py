@@ -1,33 +1,27 @@
 #!/usr/bin/python3
-"""
-more class base
-"""
+"""This module creates a Rectangle class that inherts from BaseGeometry"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """ definition of a Rectangle """
+    """A class named BaseGeometry
+    Attributes:
+    attr1(width): width of rectangle
+    attr2(height): height of rectangle
+    """
     def __init__(self, width, height):
-        """ constructor and width, height"""
+        """initializes an instance"""
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
 
     def area(self):
+        """returns area of instance"""
         return self.__width * self.__height
 
     def __str__(self):
-        """ print """
-        return ("[Rectangle] " + str(self.__width) + "/" + str(self.__height))
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact G
+        """returns string representation"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
