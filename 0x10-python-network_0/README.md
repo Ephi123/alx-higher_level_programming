@@ -1,15 +1,3 @@
-# Project Name
-**0x10. Python - Network #0**
-
-## Author's Details
-Name: *Wendy Munyasi.*
-
-Email: *wendymunyasi@gmail.com*
-
-Tel: *+254707240068.*
-
-##  Requirements
-
 ### Python Scripts
 *   Allowed editors: `vi`, `vim`, `emacs`.
 *   All your files will be interpreted/compiled on Ubuntu 20.04 LTS.
@@ -51,8 +39,3 @@ What happens when you type google.com in your browser (Application level).
 * **7. Only status code** - Write a Bash script that sends a request to a URL passed as an argument, and displays only the status code of the response. - `100-status_code.sh`.
 * **8. cURL a JSON file** - Write a Bash script that sends a JSON `POST` request to a URL passed as the first argument, and displays the body of the response. - `101-post_json.sh`.
 * **9. Catch me if you can!** - Write a Bash script that makes a request to `0.0.0.0:5000/catch_me` that causes the server to respond with a message containing `You got me!`, in the body of the response. - `102-catch_me.sh`.
-
-
-## Collaborate
-
-To collaborate, reach me through my email address wendymunyasi@gmail.com.
